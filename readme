@@ -1,0 +1,30 @@
+Procedure:
+
+- Start a virtual environment and install requirements
+- Build sentiment classifier
+- Write app.py which is the API application that will be deployed
+- Update requirements.txt as you write the code
+- Test the API
+
+
+
+Ways to use the api:
+
+- Using Jupiter:
+
+    Code:
+    install requests
+    url = 'http://127.0.0.1:5000/'
+    params ={'query': 'that movie was boring'}
+    response = requests.get(url, params)
+    response.json()
+    Output: {'confidence': 0.128, 'prediction': 'Negative'}
+
+- Using Curl:
+    Code:
+        $ curl -X GET http://127.0.0.1:5000/ -d query='that movie was boring'
+    {
+        "prediction": "Negative",
+        "confidence": 0.128
+    }
+
